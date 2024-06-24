@@ -1,11 +1,22 @@
-//           p/ o html
-let titulo = document.querySelector('h1');
-titulo.innerHTML ='Jogo do número secreto';
+//funcoes com e sem parametro e retorno
+let numeroSecreto = gerarNumeroAleatorio();
 
-let paragrafo = document.querySelector('p');
-paragrafo.innerHTML = 'Escolha um número entre 1 e 10';
-
-//funcao, trecho de codigo com funçao, responsabilidade
-function verificarChute() {
-    console.log('O botao foi clicado')
+function exibirTextoNaTela(tag, texto){
+    let campo = document.querySelector(tag);
+    campo.innerHTML = texto
 }
+
+exibirTextoNaTela('h1','Jogo do número secreto')
+exibirTextoNaTela('p', 'Escolha um número entre 1 e 10')
+
+function verificarChute(){
+    let chute = document.querySelector('input').value;
+    console.log(chute == numeroSecreto);
+    console.log(numeroSecreto);
+}
+
+function gerarNumeroAleatorio(){
+    return parseInt(Math.random() * 10 + 1);
+
+}
+
